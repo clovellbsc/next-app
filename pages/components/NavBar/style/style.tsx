@@ -8,10 +8,12 @@ export const Style = styled.div`
   color: white;
   width: 100vw;
   z-index: 1;
-  padding: 5px;
+  overflow: hidden;
+  padding: 14px 16px;
 `;
 
 export const NavBarItems = styled.div`
+  outline-color: white;
   &:hover {
     cursor: pointer;
     background-color: white;

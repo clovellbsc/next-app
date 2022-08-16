@@ -14,7 +14,11 @@ const NavBar = () => {
   ];
 
   const handleChange = () => {
-    setIsShown(!isShown);
+    setIsShown(true);
+  };
+
+  const handleExit = () => {
+    setIsShown(false);
   };
 
   const navBarElements = navBarItems.map((item, index) => {
@@ -30,7 +34,11 @@ const NavBar = () => {
   return (
     <Style>
       {navBarElements}
-      <DropDown isShown={isShown} handleChange={handleChange} />
+      <DropDown
+        isShown={isShown}
+        handleChange={handleChange}
+        handleExit={handleExit}
+      />
     </Style>
   );
 };
