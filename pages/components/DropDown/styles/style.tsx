@@ -7,16 +7,35 @@ export const Style = styled.div`
 `;
 
 export const DropDownControl = styled.div`
-  padding: 14px 16px
+  min-width: 160px;
+  text-align: center;
+  outline-color: white;
+  outline-style: solid;
   &:hover {
     cursor: pointer;
     background-color: white;
     color: black;
     border-radius: 5px;
+    outline-color: white;
+    outline-style: solid;
   }
 `;
 
 export const DropDownStyle = styled.div`
   display: display;
   padding: 14px 16px;
+`;
+
+export const DropDownItems = styled.div`
+  outline-color: grey;
+  outline-style: solid;
+  min-width: 5vw;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    outline-color: black;
+    outline-style: solid;
+  }
 `;

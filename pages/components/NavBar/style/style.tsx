@@ -13,7 +13,8 @@ export const Style = styled.div`
 `;
 
 export const NavBarItems = styled.div`
-  outline-color: white;
+  min-width: 160px;
+  text-align: center;
   &:hover {
     cursor: pointer;
     background-color: white;

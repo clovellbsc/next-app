@@ -7,6 +7,7 @@ const NavBar = () => {
   const [isShown, setIsShown] = useState(false);
 
   const navBarItems = [
+    { name: "Logo TBC", href: "/" },
     { name: "Home", href: "/" },
     { name: "Another Thing", href: "/" },
     { name: "Different Thing", href: "/" },

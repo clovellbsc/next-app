@@ -1,5 +1,5 @@
 import { NavBarItems } from "../NavBar/style/style";
-import { DropDownControl, Style } from "./styles/style";
+import { DropDownControl, DropDownItems, Style } from "./styles/style";
 
 type Props = {
   isShown: boolean;
@@ -21,19 +21,19 @@ const DropDown = ({ isShown, handleChange, handleExit }: Props) => {
           position: "absolute",
           backgroundColor: "black",
           minWidth: "160px",
-          boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.2)",
+          // boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.2)",
           zIndex: 1,
         }}
       >
-        <NavBarItems>
+        <DropDownItems>
           <p>Something</p>
-        </NavBarItems>
-        <NavBarItems>
+        </DropDownItems>
+        <DropDownItems>
           <p>Settings</p>
-        </NavBarItems>
-        <NavBarItems>
+        </DropDownItems>
+        <DropDownItems>
           <p>Log Out</p>
-        </NavBarItems>
+        </DropDownItems>
       </div>
     </Style>
   );
