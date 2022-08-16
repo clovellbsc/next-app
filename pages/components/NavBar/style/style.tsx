@@ -7,4 +7,13 @@ export const Style = styled.div`
   background-color: black;
   color: white;
   width: 100vw;
+  z-index: 1;
+  padding: 5px;
+`;
+
+export const NavBarItems = styled.div`
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `;
