@@ -6,32 +6,30 @@ import { NavBarItems, Style } from "./style/style";
 const NavBar = () => {
   const [isShown, setIsShown] = useState(false);
 
+  const navBarItems = [
+    { name: "Home", href: "/" },
+    { name: "Another Thing", href: "/" },
+    { name: "Different Thing", href: "/" },
+    { name: "Another Different Thing", href: "/" },
+  ];
+
   const handleChange = () => {
     setIsShown(!isShown);
   };
 
+  const navBarElements = navBarItems.map((item, index) => {
+    return (
+      <Link key={index} href={item.href}>
+        <NavBarItems>
+          <p>{item.name}</p>
+        </NavBarItems>
+      </Link>
+    );
+  });
+
   return (
     <Style>
-      <NavBarItems>
-        <p>
-          <Link href="/">Home</Link>
-        </p>
-      </NavBarItems>
-      <NavBarItems>
-        <p>
-          <Link href="/">Another thing</Link>
-        </p>
-      </NavBarItems>
-      <NavBarItems>
-        <p>
-          <Link href="/">Different thing</Link>
-        </p>
-      </NavBarItems>
-      <NavBarItems>
-        <p>
-          <Link href="/">another different thing</Link>
-        </p>
-      </NavBarItems>
+      {navBarElements}
       <DropDown isShown={isShown} handleChange={handleChange} />
     </Style>
   );

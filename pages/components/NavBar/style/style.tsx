@@ -13,6 +13,7 @@ export const Style = styled.div`
 
 export const NavBarItems = styled.div`
   &:hover {
+    cursor: pointer;
     background-color: white;
     color: black;
   }
