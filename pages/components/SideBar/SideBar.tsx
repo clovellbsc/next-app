@@ -8,10 +8,14 @@ import {
   VpnLockOutlined,
   CoronavirusOutlined,
 } from "@mui/icons-material";
-import { useState } from "react";
 
-const SideBar = () => {
-  const [extended, setExtended] = useState(false);
+type Props = {
+  handleChange: () => void;
+  extended: boolean;
+};
+
+const SideBar = ({ handleChange, extended }: Props) => {
+  // const [extended, setExtended] = useState(false);
 
   const navBarItems = [
     { name: "Flights", href: "/", icon: <FlightTakeoff /> },
@@ -32,9 +36,9 @@ const SideBar = () => {
     );
   });
 
-  const handleChange = () => {
-    setExtended(!extended);
-  };
+  // const handleChange = () => {
+  //   setExtended(!extended);
+  // };
 
   return (
     <div

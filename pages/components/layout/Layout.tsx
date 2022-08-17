@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import SideBar from "../SideBar/SideBar";
 
@@ -7,11 +7,25 @@ type Props = {
 };
 
 export default function Layout({ children }: Props) {
+  const [extended, setExtended] = useState(false);
+
+  const handleChange = () => {
+    setExtended(!extended);
+  };
+
+  const handleClose = () => {
+    setExtended(false);
+  };
+
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <NavBar />
-      <SideBar />
-      <main>{children}</main>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <SideBar handleChange={handleChange} extended={extended} />
+        <main style={{ width: "100%" }} onClick={handleClose}>
+          {children}
+        </main>
+      </div>
     </div>
   );
 }
