@@ -21,11 +21,6 @@ export const DropDownControl = styled.div`
   }
 `;
 
-export const DropDownStyle = styled.div`
-  display: display;
-  padding: 14px 16px;
-`;
-
 export const DropDownItems = styled.div`
   outline-color: grey;
   outline-style: solid;
@@ -38,4 +33,18 @@ export const DropDownItems = styled.div`
     outline-color: black;
     outline-style: solid;
   }
+`;
+
+interface Props {
+  display: boolean;
+}
+
+export const DropDownContainer = styled.div<Props>`
+  display?: ${(props) => (props.display ? "flex" : "none")}
+  flex-direction: column;
+  margin-top: 50px;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  z-index: 1;
 `;
