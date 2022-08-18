@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Modal, ModalMain } from "./style/style";
 
 type Props = {
   isOpen: boolean;
@@ -25,9 +26,10 @@ const LogInModal = ({ handleClose, isOpen }: Props) => {
       }}
     >
       {isSignUp ? (
-        <div>
-          <div>Sign Up</div>
-          <div>
+        <Modal onClick={handleClose}>
+          <ModalMain onClick={(e) => e.stopPropagation()}>
+            <div>Sign Up</div>
+
             <p>
               Already have an account?{" "}
               <button onClick={handleIsNotSignUp}>Log In Here</button>
@@ -54,36 +56,43 @@ const LogInModal = ({ handleClose, isOpen }: Props) => {
                 placeholder="Your password.."
               ></input>
             </form>
-          </div>
-        </div>
-      ) : (
-        <div>
-          <div>Log In</div>
-          <div>
-            <p>
-              Already have an account?{" "}
-              <button onClick={handleIsSignUp}>Log In Here</button>
-            </p>
-            <form style={{ display: "flex", flexDirection: "column" }}>
-              <input
-                type="text"
-                name="email"
-                placeholder="Your email.."
-              ></input>
-              <input
-                type="password"
-                name="password"
-                placeholder="Your password.."
-              ></input>
-            </form>
-          </div>
-        </div>
-      )}
 
-      <div>
-        <button>Sign In</button>
-        <button onClick={handleClose}>Close</button>
-      </div>
+            <div>
+              <button>Sign In</button>
+              <button onClick={handleClose}>Close</button>
+            </div>
+          </ModalMain>{" "}
+        </Modal>
+      ) : (
+        <Modal onClick={handleClose}>
+          <ModalMain onClick={(e) => e.stopPropagation()}>
+            <div>Log In</div>
+            <div>
+              <p>
+                Already have an account?{" "}
+                <button onClick={handleIsSignUp}>Log In Here</button>
+              </p>
+              <form style={{ display: "flex", flexDirection: "column" }}>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Your email.."
+                ></input>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Your password.."
+                ></input>
+              </form>
+            </div>
+
+            <div>
+              <button>Sign In</button>
+              <button onClick={handleClose}>Close</button>
+            </div>
+          </ModalMain>{" "}
+        </Modal>
+      )}
     </div>
   );
 };

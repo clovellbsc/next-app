@@ -8,8 +8,37 @@ import { ModalNavBar, NavBarItems, Style } from "./style/style";
 const NavBar = () => {
   const [isShown, setIsShown] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const router = useRouter();
 
+  const handleHover = () => {
+    setIsHovering(true);
+  };
+
+  const handleNoHover = () => {
+    setIsHovering(false);
+  };
+
+  const style: { display: string; minWidth: string; textAlign: string } = {
+    display: isOpen ? "none" : "block",
+    minWidth: "160px",
+    textAlign: "center",
+  };
+  const hoverStyle: {
+    display: string;
+    minWidth: string;
+    textAlign: string;
+    cursor: string;
+    backgroundColor: string;
+    color: string;
+  } = {
+    display: isOpen ? "none" : "block",
+    minWidth: "160px",
+    textAlign: "center",
+    cursor: "pointer",
+    backgroundColor: "white",
+    color: "black",
+  };
   const navBarItems: ({ name: string; href: string } | undefined)[] =
     router.pathname === "/"
       ? [{ name: "Logo TBC", href: "/" }]
@@ -52,7 +81,9 @@ const NavBar = () => {
       {navBarElements}
       {router.pathname === "/" ? (
         <div
-          style={{ display: isOpen ? "none" : "block" }}
+          style={isHovering ? hoverStyle : style}
+          onMouseEnter={handleHover}
+          onMouseLeave={handleNoHover}
           onClick={handleOpen}
         >
           <p>Log In / Sign Up</p>
