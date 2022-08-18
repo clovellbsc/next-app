@@ -1,9 +1,4 @@
-import {
-  DropDownContainer,
-  DropDownControl,
-  DropDownItems,
-  Style,
-} from "./styles/style";
+import { DropDownControl, DropDownItems, Style } from "./styles/style";
 
 type Props = {
   isShown: boolean;
