@@ -16,7 +16,25 @@ export const Modal = styled.div`
 `;
 
 export const ModalMain = styled.div`
+  width: 50vw;
+  height: 75vh;
   background-color: white;
   color: black;
-  padding: 10px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  justify-content: fit-content;
+`;
+
+export const Input = styled.input`
+  width: 75%;
+  height: 3em;
+  margin: 10px;
+`;
+
+export const Form = styled.form`
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  max-height: 75%;
+  margin-bottom: 20px;
 `;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal, ModalMain } from "./style/style";
+import { Form, Input, Modal, ModalMain } from "./style/style";
 
 type Props = {
   isOpen: boolean;
@@ -28,34 +28,36 @@ const LogInModal = ({ handleClose, isOpen }: Props) => {
       {isSignUp ? (
         <Modal onClick={handleClose}>
           <ModalMain onClick={(e) => e.stopPropagation()}>
-            <div>Sign Up</div>
+            <div>
+              <h1>Sign Up</h1>
+            </div>
 
             <p>
               Already have an account?{" "}
               <button onClick={handleIsNotSignUp}>Log In Here</button>
             </p>
-            <form style={{ display: "flex", flexDirection: "column" }}>
-              <input
+            <Form style={{ display: "flex", flexDirection: "column" }}>
+              <Input
                 type="text"
                 name="firstname"
                 placeholder="Your first name.."
-              ></input>
-              <input
+              ></Input>
+              <Input
                 type="text"
                 name="lastname"
                 placeholder="Your last name.."
-              ></input>
-              <input
+              ></Input>
+              <Input
                 type="text"
                 name="email"
                 placeholder="Your email.."
-              ></input>
-              <input
+              ></Input>
+              <Input
                 type="password"
                 name="password"
                 placeholder="Your password.."
-              ></input>
-            </form>
+              ></Input>
+            </Form>
 
             <div>
               <button>Sign In</button>
@@ -66,24 +68,26 @@ const LogInModal = ({ handleClose, isOpen }: Props) => {
       ) : (
         <Modal onClick={handleClose}>
           <ModalMain onClick={(e) => e.stopPropagation()}>
-            <div>Log In</div>
+            <div>
+              <h1>Log In</h1>
+            </div>
             <div>
               <p>
                 Already have an account?{" "}
                 <button onClick={handleIsSignUp}>Log In Here</button>
               </p>
-              <form style={{ display: "flex", flexDirection: "column" }}>
-                <input
+              <Form style={{ display: "flex", flexDirection: "column" }}>
+                <Input
                   type="text"
                   name="email"
                   placeholder="Your email.."
-                ></input>
-                <input
+                ></Input>
+                <Input
                   type="password"
                   name="password"
                   placeholder="Your password.."
-                ></input>
-              </form>
+                ></Input>
+              </Form>
             </div>
 
             <div>
