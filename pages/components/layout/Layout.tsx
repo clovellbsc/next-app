@@ -22,8 +22,13 @@ export default function Layout({ children }: Props) {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <NavBar />
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        {router.pathname.includes("/trips") && (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        {router.pathname.includes("/trips/[id]") && (
           <SideBar handleChange={handleChange} extended={extended} />
         )}
         <main style={{ width: "100%" }} onClick={handleClose}>

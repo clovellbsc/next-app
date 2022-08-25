@@ -8,6 +8,7 @@ import {
   VpnLockOutlined,
   CoronavirusOutlined,
 } from "@mui/icons-material";
+import { useRouter } from "next/router";
 
 type Props = {
   handleChange: () => void;
@@ -15,15 +16,32 @@ type Props = {
 };
 
 const SideBar = ({ handleChange, extended }: Props) => {
-  // const [extended, setExtended] = useState(false);
+  const router = useRouter();
+  const { id } = router.query;
 
   const navBarItems = [
-    { name: "Flights", href: "/", icon: <FlightTakeoff /> },
-    { name: "Accommodation", href: "/", icon: <Hotel /> },
-    { name: "Transfers", href: "/", icon: <Commute /> },
-    { name: "Parking", href: "/", icon: <LocalParkingRounded /> },
-    { name: "Visas", href: "/", icon: <VpnLockOutlined /> },
-    { name: "Covid", href: "/", icon: <CoronavirusOutlined /> },
+    {
+      name: "Flights",
+      href: `/trips/${id}/flights/`,
+      icon: <FlightTakeoff />,
+    },
+    {
+      name: "Accommodation",
+      href: `/trips/${id}/accommodation/`,
+      icon: <Hotel />,
+    },
+    { name: "Transfers", href: `/trips/${id}/transfers/`, icon: <Commute /> },
+    {
+      name: "Parking",
+      href: `/trips/${id}/parking/`,
+      icon: <LocalParkingRounded />,
+    },
+    { name: "Visas", href: `/trips/${id}/visas/`, icon: <VpnLockOutlined /> },
+    {
+      name: "Covid",
+      href: `/trips/${id}/covid/`,
+      icon: <CoronavirusOutlined />,
+    },
   ];
 
   const navBarElements = navBarItems.map((item, index) => {
@@ -35,10 +53,6 @@ const SideBar = ({ handleChange, extended }: Props) => {
       </Link>
     );
   });
-
-  // const handleChange = () => {
-  //   setExtended(!extended);
-  // };
 
   return (
     <div
